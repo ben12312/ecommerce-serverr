@@ -1,6 +1,6 @@
 
 // coloumn
-// id name address birth_date role(admin,seller,customer) seller_permission is_deleted created_at updated_at
+// id id_seller name address birth_date role(admin,seller,customer) seller_permission is_deleted created_at updated_at
 class userController {
     static async getUser(req, res, next) {
         try {
@@ -12,15 +12,34 @@ class userController {
                 }
             ])
         } catch (error) {
-            console.log('get', error);
+            console.log('get user', error);
         }
     }
 
-    static async insert(req, res, next) {
+    static async insertUser(req, res, next) {
+        let { id_seller,name,address,birth_date,role } = req.body;
         try {
             
         } catch (error) {
-            console.log('insert', error);
+            console.log('insert user', error);
+        }
+    }
+    
+    static async updateUser(req, res, next) {
+        let { id_seller,name,address,birth_date,role } = req.body;
+        try {
+            
+        } catch (error) {
+            console.log('update user', error);
+        }
+    }
+
+    static async deleteUser(req, res, next) {
+        let id = req.query.id;
+        try {
+            
+        } catch (error) {
+            console.log('delete user', error);
         }
     }
 }
