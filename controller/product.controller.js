@@ -1,3 +1,4 @@
+const { sendResponse } = require('../helper/helper');
 // coloumn
 // id office_id product_name category picture price stock sold total_items description status(open,lock) is_deleted created_at updated_at
 
@@ -29,7 +30,7 @@ class productController {
     static async updateProduct(req, res, next) {
         let { office_id,name,category,picture,price,stock,description,status } = req.body;
         try {
-            
+            sendResponse(res, 200, 'success edit', null)
         } catch (error) {
             console.log('update product', error);
         }
